@@ -1,16 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { Collapse } from 'bootstrap'
+import React, { useState } from 'react'
 
 export const Book = ({ book }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
-    useEffect(() => {
-        let myCollapse = document.getElementById('collapseTarget')
-        let bsCollapse = new Collapse(myCollapse, {isExpanded: false})
-        isExpanded ? bsCollapse.show() : bsCollapse.hide()
-    })
-
-    
+    const handleExpanded = () => {
+        setIsExpanded(!isExpanded)
+    }
 
     return (
         <div className="col">
@@ -30,12 +25,17 @@ export const Book = ({ book }) => {
                     </div>
                 </div>
                 <div className="card-footer">
-                    <button className="btn btn-primary" onClick={() => setIsExpanded(isExpanded => !isExpanded)} aria-expanded="false" aria-controls="collapseExample">
-                        Example
-                    </button>
-                    <div className="collapse" id="collapseTarget">
+                    { isExpanded ? 
+                        <button className="btn btn-primary" onClick={handleExpanded} aria-expanded="false" aria-controls="collapseExample">
+                        Show Less </button> :
+                        <button className="btn btn-primary" onClick={handleExpanded} aria-expanded="false" aria-controls="collapseExample">
+                        Show More </button>
+                    }
+                    { isExpanded &&
+                        <div>
                         Some placeholder content for the collapse component.
-                    </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
