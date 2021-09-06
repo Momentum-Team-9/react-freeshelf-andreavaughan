@@ -14,10 +14,7 @@ export const Book = ({ book }) => {
                     <h4 className="card-title">{ book.title }</h4>
                     <h5 className="card-text">{ book.author }</h5>
                 </div>
-                <div className="row g-0 card-body">
-                    <div className="col-md-4">
-                        <img src={ book.coverImageUrl } className="img-fluid rounded-start" alt={book.title} />
-                    </div>
+                <div className="row card-body">
                     <div className="col-md-8">
                         <div>
                             <p className="card-text">{ book.shortDescription }</p>
@@ -28,8 +25,8 @@ export const Book = ({ book }) => {
                                 Show More </button>
                             }
                             { isExpanded &&
-                                <div>
-                                    <a href={ book.url } target="_blank" rel="noopener noreferrer">Link to book</a>
+                                <div className="expanded-div">
+                                    <p><a href={ book.url } target="_blank" rel="noopener noreferrer">Link to URL</a></p>
                                     { book.publisher ? <p>Publisher: { book.publisher }</p> : <p></p>}
                                     { book.publicationDate ? <p>Published: { book.publicationDate }</p> : <p></p>}
                                     <p>{ book.detailedDescription }</p>
@@ -37,9 +34,9 @@ export const Book = ({ book }) => {
                             }
                         </div>
                     </div>
-                </div>
-                <div className="card-footer">
-                    
+                    <div className="col-md-4">
+                        <img src={ book.coverImageUrl } className="img-fluid" alt={ book.title } />
+                    </div>
                 </div>
             </div>
         </div>
