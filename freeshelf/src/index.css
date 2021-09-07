@@ -1,0 +1,34 @@
+body {
+    background-color: #CDCDCD;
+}
+
+.navbar {
+    background-color: #011638;
+    color: #F1F7ED;
+}
+
+.navbar.h1 {
+    color: #DFF8EB;
+}
+
+.card {
+    background-color: #EBFAF3;
+    margin: 1em;
+    color: #011638;
+}
+
+.btn-primary {
+    background-color: #214E34;
+}
+
+.btn-primary:hover {
+    background-color: #173624;
+}
+
+.btn-primary:focus {
+    background-color: #30724C;
+}
+
+.expanded-div {
+    margin: .5em;
+}

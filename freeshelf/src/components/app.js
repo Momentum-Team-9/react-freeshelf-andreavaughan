@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { books as data } from '../data'
 import { Book } from './book'
+import '../index.css'
 
 export const App = () => {
     const [books] = useState(data)
@@ -8,9 +9,9 @@ export const App = () => {
     return (
         <>
             <div>
-                <nav class="navbar navbar-light bg-light">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Books</a>
+                <nav className="Nav navbar navbar-light">
+                    <div className="container-fluid">
+                        <h1>Books</h1>
                     </div>
                 </nav>
                 <div className="row row-cols-1 row-cols-xxl-2">
